@@ -74,8 +74,7 @@ MESSAGES = {
             '• /riavvia - Riavvia il bot.\n'
         ),
         "HELP_COMMAND_FOOTER": (
-            '\nSe vuoi dare un\'occhiata al codice sorgente di questo bot, lo puoi trovare su GitHub: '
-            'https://github.com/PalestineArchive/PalestineMoviesBot\n'
+            '\nSe vuoi dare un\'occhiata al codice sorgente di questo bot, lo puoi trovare su <a href="https://github.com/PalestineArchive/PalestineMoviesBot">GitHub</a>. '
             'Sentiti liberə di contribuire al progetto, segnalare bug o suggerire nuove funzionalità.'
         ),
     },
@@ -155,8 +154,7 @@ MESSAGES = {
             '• /restart - Restart the bot.\n'
         ),
         "HELP_COMMAND_FOOTER": (
-            '\nIf you want to take a look at the source code of this bot, you can find it on GitHub: '
-            'https://github.com/PalestineArchive/PalestineMoviesBot\n'
+            '\nIf you want to take a look at the source code of this bot, you can find it on <a href="https://github.com/PalestineArchive/PalestineMoviesBot">GitHub</a>. '
             'Feel free to contribute to the project, report bugs, or suggest new features.' 
         ),
     }
