@@ -113,10 +113,10 @@ async def search(update: Update, context: ContextTypes.DEFAULT_TYPE):
             
             if results:
                 await update.message.reply_text(results, parse_mode="HTML", disable_web_page_preview=True)
-                # await context.bot.send_message(ADMIN_ID, f"{tracking_message}✅", parse_mode="HTML")
+                await context.bot.send_message(ADMIN_ID, f"{tracking_message}✅", parse_mode="HTML")
             else:
                 await update.message.reply_text(get_localized_message(update, "SEARCH_NO_MEDIA_FOUND"), parse_mode="HTML", disable_web_page_preview=True)
-                # await context.bot.send_message(ADMIN_ID, f"{tracking_message}❌", parse_mode="HTML")
+                await context.bot.send_message(ADMIN_ID, f"{tracking_message}❌", parse_mode="HTML")
 
 
 async def subscribe(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -222,6 +222,7 @@ async def whisper(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message_text = message_text.replace(f"/rispondi {user_id} ", "").replace(f"/rispondi {user_id}", "")
 
     await context.bot.send_message(user_id, get_localized_message(update, "REPLY_HEADER") + message_text + get_localized_message(update, "REPLY_FOOTER"), parse_mode="HTML")
+    await update.message.reply_text("Message sent.")
     
 
 async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
