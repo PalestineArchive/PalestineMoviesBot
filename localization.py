@@ -17,7 +17,13 @@ MESSAGES = {
         # search command
         "SEARCH_NO_QUERY": "Per favore fornisci cosa vuoi cercare.\n\nEsempio: /search <i>nome del film</i>",
         "SEARCH_SHORT_QUERY": "Spiacente, devi inserire almeno 4 caratteri.",
-        "SEARCH_NO_MEDIA_FOUND": "Nessun media trovato.",
+        "SEARCH_NO_MEDIA_FOUND": (
+            'Nessun media trovato.\n\nAlcuni suggerimenti per migliorare la ricerca:\n'
+            '• Assicurati di aver scritto correttamente il nome del film, libro o altro\n'
+            '• Cerca il titolo in inglese\n'
+            '• Alcuni titoli potrebbero essere scritti in modi diversi (es. \"Souha\" invece di \"Soha\", prova a cercare in entrambi i modi)\n\n'
+            '<b>Se non trovi ciò che cerchi, prova a richiederlo con il comando /richiedi. È molto apprezzato!</b>'
+        ),
 
         # subscribe and unsubscribe commands
         "SUBSCRIBE_SUCCESS": "Ti sei iscrittə per ricevere nuove uscite dal canale @PalestineMovies.",
@@ -39,7 +45,7 @@ MESSAGES = {
         # reply command
         "REPLY_EMPTY": "Per favore fornisci un messaggio da inviare all'utente.\n\nEsempio: /rispondi <i>user_id il tuo messaggio</i>",
         "REPLY_HEADER": "📬 <b>Messaggio dall'amministratore:</b>\n\n",
-        "REPLY_FOOTER": "\n\n<i>Rispondi a questo messaggio usando nuovamente il comando /contatta.</i>",
+        "REPLY_FOOTER": "\n\n<i>Rispondi a questo messaggio usando il comando /contatta.</i>",
 
         # help command
         "HELP_COMMAND_HEADER": (
@@ -97,7 +103,13 @@ MESSAGES = {
         # search command
         "SEARCH_NO_QUERY": "Please provide what you want to search.\n\nExample: /search <i>movie name</i>",
         "SEARCH_SHORT_QUERY": "Sorry, you must enter at least 4 characters.",
-        "SEARCH_NO_MEDIA_FOUND": "No media found.",
+        "SEARCH_NO_MEDIA_FOUND": (
+            'No media found.\n\nSome tips to improve your search:\n'
+            '• Make sure you wrote correctly the title of the movie, book, or other\n'
+            '• Search the title in English\n'
+            '• Some titles might be written in different ways (e.g. \"Souha\" instead of \"Soha\", try searching in both ways)\n\n'
+            '<b>If you can\'t find what you are looking for, try requesting it with the /request command. It\'s greatly appreciated!</b>'
+        ),
 
         # subscribe and unsubscribe commands
         "SUBSCRIBE_SUCCESS": "You have been subscribed to receive new media releases from the @PalestineMovies channel.",
@@ -119,7 +131,7 @@ MESSAGES = {
         # reply command
         "REPLY_EMPTY": "Please provide a message to send to the user.\n\nExample: /reply <i>user_id your message</i>",
         "REPLY_HEADER": "📬 <b>Message from the admin:</b>\n\n",
-        "REPLY_FOOTER": "\n\n<i>Reply to this message by using again the /contact command.</i>",
+        "REPLY_FOOTER": "\n\n<i>Reply to this message by using the /contact command.</i>",
 
         # help command
         "HELP_COMMAND_HEADER": (
