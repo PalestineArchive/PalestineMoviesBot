@@ -80,6 +80,33 @@ async def search(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         search_text = update.message.text.replace('/search ', '').replace('/search', '')
         search_text = search_text.replace('/cerca ', '').replace('/cerca', '')
+
+        # Special searches
+        if search_text.lower() == "libri":
+            search_text = "book"
+        elif search_text.lower() == "books":
+            search_text = "book"
+        elif search_text.lower() == "libri in italiano" or search_text.lower() == "libri italiani":
+            search_text = "book italian"
+        elif search_text.lower() == "english books" or search_text.lower() == "books in english":
+            search_text = "book english"
+
+        elif search_text.lower() == "corto" or search_text.lower() == "cortometraggio" or search_text.lower() == "corto breve" or search_text.lower() == "corti" or search_text.lower() == "cortometraggi" or search_text.lower() == "corti brevi":
+            search_text = "short directed by"
+        elif search_text.lower() == "shorts" or search_text.lower() == "short films" or search_text.lower() == "short" or search_text.lower() == "short movies" or search_text.lower() == "short movie" or search_text.lower() == "short film":
+            search_text = "short directed by"
+        elif search_text.lower() == "corti in italiano" or search_text.lower() == "corti italiani":
+            search_text = "short directed by italian"
+
+        elif search_text.lower() == "film":
+            search_text = "directed by"
+        elif search_text.lower() == "movies":
+            search_text = "directed by"
+        elif search_text.lower() == "film in italiano" or search_text.lower() == "film italiano" or search_text.lower() == "film italiani":
+            search_text = "directed by italian"
+        
+        elif search_text.lower() == "italiano":
+            search_text = "italian"
         
         if len(search_text) < 4:
             await update.message.reply_text(get_localized_message(update, "SEARCH_SHORT_QUERY"), parse_mode="HTML")
@@ -98,25 +125,10 @@ async def search(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         await update.message.reply_text(results, parse_mode="HTML", disable_web_page_preview=True)
                         results = ""
             
-            user_id = update.message.from_user.id
-            first_name = update.message.from_user.first_name
-            last_name = update.message.from_user.last_name or "n/a"
-            username = update.message.from_user.username or "n/a"
-            language_code = update.message.from_user.language_code
-
-            tracking_message = f"User ID: <code>{user_id}</code>\n" \
-                                f"First name: {first_name}\n" \
-                                f"Last name: {last_name}\n" \
-                                f"Username: {username}\n" \
-                                f"Language code: {language_code}\n" \
-                                f"Search query: {search_text}\n\n"
-            
             if results:
                 await update.message.reply_text(results, parse_mode="HTML", disable_web_page_preview=True)
-                await context.bot.send_message(ADMIN_ID, f"{tracking_message}✅", parse_mode="HTML")
             else:
                 await update.message.reply_text(get_localized_message(update, "SEARCH_NO_MEDIA_FOUND"), parse_mode="HTML", disable_web_page_preview=True)
-                await context.bot.send_message(ADMIN_ID, f"{tracking_message}❌", parse_mode="HTML")
 
 
 async def subscribe(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -172,12 +184,13 @@ async def request_media(update: Update, context: ContextTypes.DEFAULT_TYPE):
     request_text = update.message.text.replace('/request ', '').replace('/request', '')
     request_text = request_text.replace('/richiedi ', '').replace('/richiedi', '')
 
-    tracking_message = f"New request: {request_text}\n\n" \
+    tracking_message = f"New request: <code>{request_text}</code>\n\n" \
                         f"User ID: <code>{user_id}</code>\n" \
                         f"First name: {first_name}\n" \
                         f"Last name: {last_name}\n" \
                         f"Username: {username}\n" \
-                        f"Language code: {language_code}\n"
+                        f"Language code: {language_code}"
+    
     await context.bot.send_message(ADMIN_ID, tracking_message, parse_mode="HTML")
 
     await update.message.reply_text(get_localized_message(update, "REQUEST_SUCCESS"), parse_mode="HTML")
