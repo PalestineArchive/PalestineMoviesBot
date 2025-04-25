@@ -34,7 +34,7 @@ PalestineMoviesBot is a Telegram bot designed to assist users in searching for m
 1. Clone the repository:
 
    ```
-   git clone https://github.com/yourusername/PalestineMoviesBot.git
+   git clone https://github.com/PalestineArchive/PalestineMoviesBot.git
    ```
    
 3. Install the required packages:
