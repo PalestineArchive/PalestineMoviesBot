@@ -78,8 +78,12 @@ async def search(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(get_localized_message(update, "SEARCH_NO_QUERY"), parse_mode="HTML")
             return
         
-        search_text = update.message.text.replace('/search ', '').replace('/search', '')
-        search_text = search_text.replace('/cerca ', '').replace('/cerca', '')
+        search_text = update.message.text
+        for cmd in ['/search ', '/search', '/cerca ', '/cerca']:
+            search_text = search_text.replace(cmd, '', 1)
+            search_text = search_text.replace(cmd.capitalize(), '', 1)
+            search_text = search_text.replace(cmd.upper(), '', 1)
+            search_text = search_text.replace(cmd.title(), '', 1)
 
         # Special searches
         if search_text.lower() == "libri":
@@ -183,15 +187,6 @@ async def request_media(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     request_text = update.message.text.replace('/request ', '').replace('/request', '')
     request_text = request_text.replace('/richiedi ', '').replace('/richiedi', '')
-
-    tracking_message = f"New request: <code>{request_text}</code>\n\n" \
-                        f"User ID: <code>{user_id}</code>\n" \
-                        f"First name: {first_name}\n" \
-                        f"Last name: {last_name}\n" \
-                        f"Username: {username}\n" \
-                        f"Language code: {language_code}"
-    
-    await context.bot.send_message(ADMIN_ID, tracking_message, parse_mode="HTML")
 
     await update.message.reply_text(get_localized_message(update, "REQUEST_SUCCESS"), parse_mode="HTML")
 
