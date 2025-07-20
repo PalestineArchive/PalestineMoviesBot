@@ -112,7 +112,7 @@ async def search(update: Update, context: ContextTypes.DEFAULT_TYPE):
         elif search_text.lower() == "italiano":
             search_text = "italian"
         
-        if len(search_text) < 4:
+        if len(search_text) < 2:
             await update.message.reply_text(get_localized_message(update, "SEARCH_SHORT_QUERY"), parse_mode="HTML")
             return
         
