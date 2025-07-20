@@ -16,7 +16,7 @@ MESSAGES = {
 
         # search command
         "SEARCH_NO_QUERY": "Per favore fornisci cosa vuoi cercare.\n\nEsempio: /search <i>nome del film</i>",
-        "SEARCH_SHORT_QUERY": "Spiacente, devi inserire almeno 4 caratteri.",
+        "SEARCH_SHORT_QUERY": "Spiacente, devi inserire almeno 2 caratteri.",
         "SEARCH_NO_MEDIA_FOUND": (
             'Nessun media trovato.\n\nAlcuni suggerimenti per migliorare la ricerca:\n'
             '• Assicurati di aver scritto correttamente il nome del film, libro o altro\n'
@@ -102,7 +102,7 @@ MESSAGES = {
 
         # search command
         "SEARCH_NO_QUERY": "Please provide what you want to search.\n\nExample: /search <i>movie name</i>",
-        "SEARCH_SHORT_QUERY": "Sorry, you must enter at least 4 characters.",
+        "SEARCH_SHORT_QUERY": "Sorry, you must enter at least 2 characters.",
         "SEARCH_NO_MEDIA_FOUND": (
             'No media found.\n\nSome tips to improve your search:\n'
             '• Make sure you wrote correctly the title of the movie, book, or other\n'
